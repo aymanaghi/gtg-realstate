@@ -5,6 +5,11 @@ name: Deploy showcase to GitHub Pages
 on:
   push:
     branches: [main]
+  # The photo download commits with the Actions token, which doesn't start
+  # other workflows, so deploy again once it finishes.
+  workflow_run:
+    workflows: ["Fetch listing photos"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:

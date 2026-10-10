@@ -1,0 +1,39 @@
+name: Fetch listing photos
+
+# Downloads the placeholder listing photos (scripts/photos/unsplash-ids.txt)
+# into public/photos so the site serves its own copies. Runs when the list
+# changes; the commit it makes then triggers the Pages deploy.
+
+on:
+  push:
+    branches: [main]
+    paths: [scripts/photos/unsplash-ids.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Download photos
+        run: |
+          mkdir -p public/photos
+          while read -r id; do
+            [ -z "$id" ] && continue
+            out="public/photos/$id.jpg"
+            [ -f "$out" ] && continue
+            curl -fsSL --retry 3 -o "$out" \
+              "https://images.unsplash.com/$id?auto=format&fm=jpg&fit=crop&w=1600&h=1200&q=78"
+            echo "fetched $id ($(stat -c%s "$out") bytes)"
+          done < scripts/photos/unsplash-ids.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/photos
+          git diff --cached --quiet && { echo "No new photos"; exit 0; }
+          git commit -m "Add listing photos from Unsplash"
+          git push
