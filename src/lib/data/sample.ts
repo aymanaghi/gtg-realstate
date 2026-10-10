@@ -1,3 +1,4 @@
+import { BASE_PATH } from "@/lib/format";
 import type { Lead, Listing } from "./types";
 
 /**
@@ -14,11 +15,12 @@ const agent = {
 const desc = (en: string, ar: string, ru: string) => ({ en, ar, ru });
 
 /**
- * Placeholder photos from Unsplash (free to use under the Unsplash licence).
+ * Placeholder photos from Unsplash (free to use under the Unsplash licence),
+ * stored in public/photos by the "Fetch listing photos" workflow.
  * Swap for GTG's own photos of each unit before going live.
  */
 const photo = (id: string, alt: string) => ({
-  url: `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`,
+  url: `${BASE_PATH}/photos/${id}.jpg`,
   alt,
 });
 
@@ -47,9 +49,9 @@ export const sampleListings: Listing[] = [
     permitExpiry: "2099-12-31",
     featured: true,
     images: [
-      photo("photo-1611577810610-642f8ac05c32", "Marina towers by the sea"),
+      photo("photo-1611577810610-642f8ac05c32", "Dubai Marina towers from the water"),
       photo("photo-1757924461488-ef9ad0670978", "Living room with large windows"),
-      photo("photo-1663811397207-418a92396ad5", "Bedroom"),
+      photo("photo-1663811397207-418a92396ad5", "Living area with feature wall"),
     ],
     agent,
   },
@@ -73,7 +75,7 @@ export const sampleListings: Listing[] = [
     permitExpiry: "2099-12-31",
     featured: true,
     images: [
-      photo("photo-1582610116397-edb318620f90", "Townhouse with pool and garden"),
+      photo("photo-1582610116397-edb318620f90", "Pool and garden"),
       photo("photo-1680416124510-5eae1beca412", "Open-plan living room and kitchen"),
       photo("photo-1715985160053-d339e8b6eb94", "Kitchen"),
     ],
@@ -99,7 +101,7 @@ export const sampleListings: Listing[] = [
     permitExpiry: "2099-12-31",
     featured: true,
     images: [
-      photo("photo-1615747476328-41153cf6da54", "New residential tower"),
+      photo("photo-1615747476328-41153cf6da54", "Terrace with Dubai skyline view"),
       photo("photo-1713832139688-79676097edde", "Living room with a large window"),
       photo("photo-1638454668466-e8dbd5462f20", "Bedroom with desk"),
     ],
@@ -125,8 +127,8 @@ export const sampleListings: Listing[] = [
     permitExpiry: "2099-12-31",
     featured: true,
     images: [
-      photo("photo-1706074793638-da28b90ea8ae", "Conference room"),
-      photo("photo-1497366216548-37526070297c", "Office reception hallway"),
+      photo("photo-1706074793638-da28b90ea8ae", "Open-plan office"),
+      photo("photo-1497366216548-37526070297c", "Office corridor"),
       photo("photo-1706074740295-d7a79c079562", "Glass-walled meeting room"),
     ],
     agent,
