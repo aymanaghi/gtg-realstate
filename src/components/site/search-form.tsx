@@ -1,6 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { ListingFilters } from "@/lib/data/types";
+import { BASE_PATH } from "@/lib/format";
 
 const field =
   "min-h-11 rounded-md border border-line bg-ink px-3 font-sans text-[15px] font-medium text-sand";
@@ -21,7 +22,7 @@ export function SearchForm({
 
   return (
     <form
-      action={`/${lang}/properties`}
+      action={`${BASE_PATH}/${lang}/properties${BASE_PATH ? "/" : ""}`}
       method="get"
       aria-label={s.label}
       className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3 rounded-xl border border-line bg-panel p-5"

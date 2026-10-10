@@ -53,7 +53,7 @@ async function Board() {
     <>
       {session.demo && (
         <p className="rounded-lg border border-gold bg-white px-4 py-3 text-sm">
-          <strong>Demo mode.</strong> Connect Supabase (see README) to see real leads. Changes here are not saved.
+          <strong>Demo mode.</strong> These are sample leads. Stage changes are not saved.
         </p>
       )}
       {late.length > 0 && (

@@ -63,7 +63,23 @@ With no `.env.local`, the site and CRM run in **demo mode** on sample listings a
 To show a listing on the site it needs `status = 'live'`, a permit, an English title in `listing_i18n`,
 and a `listing_channels` row for `website`. Arabic and Russian text only shows once `approved = true`.
 
-## Deploy
+## Showcase on GitHub Pages
+
+`.github/workflows/pages.yml` publishes a static demo on every push to `main`:
+sample listings with photos, all three languages, and the CRM screens in demo mode.
+GitHub Pages has no server, so in that build enquiries open WhatsApp instead of saving a lead,
+CRM stage changes aren't saved, and there's no sign-in. The swaps live in `scripts/showcase/overrides`.
+
+Build it locally:
+
+```bash
+PAGES_BASE_PATH=/gtg-realstate node scripts/showcase/build.mjs --restore   # output in ./out
+```
+
+Listing photos are placeholders from [Unsplash](https://unsplash.com/license) (free to use);
+replace them with GTG's own photos of each unit.
+
+## Deploy the full app
 
 Vercel: import the repo, add the three env vars, deploy. Point the domain at Vercel.
 

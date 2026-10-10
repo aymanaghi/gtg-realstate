@@ -48,13 +48,34 @@
     "approachTitle": "Our Approach",
     "approachBody": "Listen first. Understand the objective. Present the right options. Negotiate carefully. Stay involved until completion.",
     "items": [
-      { "title": "Residential & Luxury Property", "body": "Advisory for homes, apartments, villas and selected lifestyle assets, whether for end use or investment." },
-      { "title": "Commercial Real Estate", "body": "Support for offices, retail, commercial units, buildings and income-generating property opportunities." },
-      { "title": "Plots & Development Opportunities", "body": "Guidance on residential and commercial plots, development land and investor-focused opportunities." },
-      { "title": "Buying, Selling & Investment Advisory", "body": "Market-led support through acquisitions, disposals, negotiations, pricing and investment decision-making." },
-      { "title": "Off-Plan & Secondary Market", "body": "Access to selected developer launches as well as ready and resale opportunities across the UAE." },
-      { "title": "Property Management & Leasing Support", "body": "Assistance for owners who want their properties positioned, leased and managed with professional follow-through." },
-      { "title": "Golden Visa Property Guidance", "body": "Support for eligible property investors navigating the real-estate related Golden Visa process with the relevant specialists." }
+      {
+        "title": "Residential & Luxury Property",
+        "body": "Advisory for homes, apartments, villas and selected lifestyle assets, whether for end use or investment."
+      },
+      {
+        "title": "Commercial Real Estate",
+        "body": "Support for offices, retail, commercial units, buildings and income-generating property opportunities."
+      },
+      {
+        "title": "Plots & Development Opportunities",
+        "body": "Guidance on residential and commercial plots, development land and investor-focused opportunities."
+      },
+      {
+        "title": "Buying, Selling & Investment Advisory",
+        "body": "Market-led support through acquisitions, disposals, negotiations, pricing and investment decision-making."
+      },
+      {
+        "title": "Off-Plan & Secondary Market",
+        "body": "Access to selected developer launches as well as ready and resale opportunities across the UAE."
+      },
+      {
+        "title": "Property Management & Leasing Support",
+        "body": "Assistance for owners who want their properties positioned, leased and managed with professional follow-through."
+      },
+      {
+        "title": "Golden Visa Property Guidance",
+        "body": "Support for eligible property investors navigating the real-estate related Golden Visa process with the relevant specialists."
+      }
     ]
   },
   "listings": {
@@ -139,7 +160,8 @@
   "tagline": "Your Vision. Our Mission.",
   "footer": {
     "line": "GTG REAL ESTATE LLC | Private Real Estate Advisory Across the UAE",
-    "licence": "RERA ORN [number] · Trade licence [number]"
+    "licence": "RERA ORN [number] · Trade licence [number]",
+    "staff": "Staff login"
   },
   "whatsappLabel": "Chat with GTG on WhatsApp"
 }

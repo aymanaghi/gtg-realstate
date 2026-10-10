@@ -1,4 +1,5 @@
 import Image from "next/image";
+import founderPhoto from "@/assets/founder-nabeel.jpg";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { hasLocale } from "@/i18n/config";
@@ -45,10 +46,8 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           </div>
           <div className="overflow-hidden rounded-2xl border-2 border-gold">
             <Image
-              src="/images/founder-nabeel.jpg"
+              src={founderPhoto}
               alt={dict.hero.photoAlt}
-              width={1079}
-              height={850}
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="block h-auto w-full"
@@ -121,10 +120,8 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           </div>
           <figure className="flex flex-col items-center gap-3.5">
             <Image
-              src="/images/founder-nabeel.jpg"
+              src={founderPhoto}
               alt={dict.founder.photoAlt}
-              width={1079}
-              height={850}
               sizes="420px"
               className="aspect-[3/4] w-full max-w-[420px] rounded-xl border-2 border-gold object-cover object-[50%_30%]"
             />

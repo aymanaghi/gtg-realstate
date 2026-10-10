@@ -1,35 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { hasLocale, type Locale } from "@/i18n/config";
-import { getDictionary, type Dictionary } from "@/i18n/dictionaries";
-import { filterListings, getAllListings } from "@/lib/data/listings";
-import type { ListingFilters, PropertyType } from "@/lib/data/types";
-import { formatNumber, t } from "@/lib/format";
+import { hasLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
+import { getAllListings } from "@/lib/data/listings";
 import { GoldRule } from "@/components/site/gold-rule";
-import { ListingCard } from "@/components/site/listing-card";
-import { SearchForm } from "@/components/site/search-form";
-
-const TYPES = new Set<PropertyType>(["apartment", "villa", "townhouse", "penthouse", "office", "retail", "plot"]);
-type SP = Record<string, string | string[] | undefined>;
-
-function parseFilters(sp: SP): ListingFilters {
-  const one = (k: string) => (Array.isArray(sp[k]) ? sp[k][0] : sp[k]) || undefined;
-  const num = (k: string) => {
-    const v = Number(one(k));
-    return one(k) !== undefined && Number.isFinite(v) ? v : undefined;
-  };
-  const purpose = one("purpose");
-  const type = one("type") as PropertyType | undefined;
-  return {
-    purpose: purpose === "sale" || purpose === "rent" ? purpose : undefined,
-    market: one("market") === "off_plan" ? "off_plan" : undefined,
-    type: type && TYPES.has(type) ? type : undefined,
-    q: one("q")?.slice(0, 80),
-    beds: num("beds"),
-    maxPrice: num("maxPrice"),
-  };
-}
+import { PropertyResults } from "@/components/site/property-results";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/properties">): Promise<Metadata> {
   const { lang } = await params;
@@ -38,10 +14,10 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/properties
   return { title: dict.listings.allTitle, alternates: { canonical: `/${lang}/properties` } };
 }
 
-export default async function PropertiesPage({ params, searchParams }: PageProps<"/[lang]/properties">) {
+export default async function PropertiesPage({ params }: PageProps<"/[lang]/properties">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+  const [dict, listings] = await Promise.all([getDictionary(lang), getAllListings()]);
 
   return (
     <section className="px-6 py-14">
@@ -51,34 +27,9 @@ export default async function PropertiesPage({ params, searchParams }: PageProps
           <GoldRule className="mt-4 w-54" />
         </div>
         <Suspense fallback={<p className="text-muted">{dict.listings.loading}</p>}>
-          <Results lang={lang} dict={dict} searchParams={searchParams} />
+          <PropertyResults listings={listings} lang={lang} dict={dict} />
         </Suspense>
       </div>
     </section>
-  );
-}
-
-async function Results({ lang, dict, searchParams }: { lang: Locale; dict: Dictionary; searchParams: Promise<SP> }) {
-  const filters = parseFilters(await searchParams);
-  const listings = filterListings(await getAllListings(), filters);
-
-  return (
-    <>
-      <SearchForm lang={lang} dict={dict} defaults={filters} />
-      <p className="text-sm text-muted" aria-live="polite">
-        {listings.length === 1
-          ? dict.listings.resultOne
-          : t(dict.listings.results, { count: formatNumber(listings.length, lang) })}
-      </p>
-      {listings.length ? (
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">
-          {listings.map((l) => (
-            <ListingCard key={l.id} listing={l} lang={lang} dict={dict} />
-          ))}
-        </div>
-      ) : (
-        <p className="max-w-xl rounded-xl border border-line bg-panel p-6 text-sand-2">{dict.listings.none}</p>
-      )}
-    </>
   );
 }

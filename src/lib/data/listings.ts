@@ -3,7 +3,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createPublicClient } from "@/lib/supabase/server";
 import { sampleListings } from "./sample";
-import type { Listing, ListingFilters, Localized, PropertyType } from "./types";
+import type { Listing, Localized, PropertyType } from "./types";
 
 type PublicListingRow = {
   id: string;
@@ -87,22 +87,4 @@ export async function getFeaturedListings(limit = 4) {
 export async function getListingBySlug(slug: string) {
   const all = await getAllListings();
   return all.find((l) => l.slug === slug) ?? null;
-}
-
-export function filterListings(listings: Listing[], f: ListingFilters) {
-  const q = f.q?.trim().toLowerCase();
-  return listings.filter((l) => {
-    if (f.purpose && l.purpose !== f.purpose) return false;
-    if (f.market && l.market !== f.market) return false;
-    if (f.type && l.type !== f.type) return false;
-    if (f.beds !== undefined && (l.beds ?? -1) < f.beds) return false;
-    if (f.maxPrice && l.priceAed > f.maxPrice) return false;
-    if (q) {
-      const hay = [l.community.en, l.community.ar, l.community.ru, l.building ?? "", l.title.en]
-        .join(" ")
-        .toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
 }

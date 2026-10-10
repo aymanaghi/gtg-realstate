@@ -13,6 +13,15 @@ const agent = {
 
 const desc = (en: string, ar: string, ru: string) => ({ en, ar, ru });
 
+/**
+ * Placeholder photos from Unsplash (free to use under the Unsplash licence).
+ * Swap for GTG's own photos of each unit before going live.
+ */
+const photo = (id: string, alt: string) => ({
+  url: `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`,
+  alt,
+});
+
 export const sampleListings: Listing[] = [
   {
     id: "sample-1",
@@ -37,7 +46,11 @@ export const sampleListings: Listing[] = [
     permitNo: "[permit]",
     permitExpiry: "2099-12-31",
     featured: true,
-    images: [],
+    images: [
+      photo("photo-1611577810610-642f8ac05c32", "Marina towers by the sea"),
+      photo("photo-1757924461488-ef9ad0670978", "Living room with large windows"),
+      photo("photo-1663811397207-418a92396ad5", "Bedroom"),
+    ],
     agent,
   },
   {
@@ -59,7 +72,11 @@ export const sampleListings: Listing[] = [
     permitNo: "[permit]",
     permitExpiry: "2099-12-31",
     featured: true,
-    images: [],
+    images: [
+      photo("photo-1582610116397-edb318620f90", "Townhouse with pool and garden"),
+      photo("photo-1680416124510-5eae1beca412", "Open-plan living room and kitchen"),
+      photo("photo-1715985160053-d339e8b6eb94", "Kitchen"),
+    ],
     agent,
   },
   {
@@ -81,7 +98,11 @@ export const sampleListings: Listing[] = [
     permitNo: "[permit]",
     permitExpiry: "2099-12-31",
     featured: true,
-    images: [],
+    images: [
+      photo("photo-1615747476328-41153cf6da54", "New residential tower"),
+      photo("photo-1713832139688-79676097edde", "Living room with a large window"),
+      photo("photo-1638454668466-e8dbd5462f20", "Bedroom with desk"),
+    ],
     agent,
   },
   {
@@ -103,7 +124,11 @@ export const sampleListings: Listing[] = [
     permitNo: "[permit]",
     permitExpiry: "2099-12-31",
     featured: true,
-    images: [],
+    images: [
+      photo("photo-1706074793638-da28b90ea8ae", "Conference room"),
+      photo("photo-1497366216548-37526070297c", "Office reception hallway"),
+      photo("photo-1706074740295-d7a79c079562", "Glass-walled meeting room"),
+    ],
     agent,
   },
   {
@@ -125,7 +150,37 @@ export const sampleListings: Listing[] = [
     permitNo: "[permit]",
     permitExpiry: "2099-12-31",
     featured: false,
-    images: [],
+    images: [
+      photo("photo-1613977257365-aaae5a9817ff", "Villa with private pool"),
+      photo("photo-1758448755952-42b404bc6f39", "Formal living room"),
+      photo("photo-1512914890251-2f96a9b0bbe2", "Kitchen with island"),
+    ],
+    agent,
+  },
+  {
+    id: "sample-6",
+    slug: "palm-jumeirah-penthouse-sea-view",
+    ref: "GTG-S-1006",
+    purpose: "sale",
+    market: "ready",
+    type: "penthouse",
+    title: desc("Penthouse with infinity pool and sea view", "بنتهاوس بمسبح لا متناهٍ وإطلالة بحرية", "Пентхаус с панорамным бассейном и видом на море"),
+    description: desc("[Sample listing.]", "[إعلان تجريبي.]", "[Демо-объект.]"),
+    community: desc("Palm Jumeirah", "نخلة جميرا", "Пальм Джумейра"),
+    building: null,
+    emirate: "Dubai",
+    priceAed: 18500000,
+    beds: 4,
+    baths: 5,
+    sizeSqft: 6200,
+    permitNo: "[permit]",
+    permitExpiry: "2099-12-31",
+    featured: false,
+    images: [
+      photo("photo-1543489822-c49534f3271f", "Infinity pool overlooking the sea"),
+      photo("photo-1628592102751-ba83b0314276", "Modern living room"),
+      photo("photo-1697947656193-a87d460b5fb5", "Living room with a large window"),
+    ],
     agent,
   },
 ];

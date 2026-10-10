@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import founderPhoto from "@/assets/founder-nabeel.jpg";
 import "../fonts";
 import "../globals.css";
 import { hasLocale, localeDir, locales } from "@/i18n/config";
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
-      images: ["/images/founder-nabeel.jpg"],
+      images: [founderPhoto.src],
       locale: lang,
       type: "website",
     },

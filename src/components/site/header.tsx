@@ -1,4 +1,5 @@
 import Image from "next/image";
+import gtgLogo from "@/assets/gtg-logo.jpg";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -20,10 +21,7 @@ export function SiteHeader({ lang, dict }: { lang: Locale; dict: Dictionary }) {
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-3.5">
         <Link href={`/${lang}`} className="flex items-center gap-3.5 text-sand no-underline">
           <Image
-            src="/images/gtg-logo.jpg"
-            alt="GTG Real Estate"
-            width={150}
-            height={141}
+            src={gtgLogo} alt="GTG Real Estate"
             priority
             className="h-[68px] w-[72px] rounded object-contain"
           />
