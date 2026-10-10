@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "GTG Real Estate | Private Real Estate Advisory Across the UAE",
+    "description": "Buy, sell, lease and invest in UAE property with GTG Real Estate. Residential, commercial, off-plan and Golden Visa property guidance."
+  },
+  "nav": {
+    "buy": "Buy",
+    "rent": "Rent",
+    "offPlan": "Off-plan",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language",
+    "main": "Main"
+  },
+  "hero": {
+    "eyebrow": "Trusted • Discreet • Professional",
+    "title": "Private real estate advisory across the UAE.",
+    "body": "Whether you want to invest, buy, sell, lease or manage property, our team is ready to assist you personally and professionally.",
+    "ctaProperties": "View properties",
+    "ctaConsult": "Book a private consultation",
+    "photoAlt": "Nabeel Al Naghi, founder of GTG Real Estate, in the GTG office"
+  },
+  "search": {
+    "label": "Property search",
+    "buy": "Buy",
+    "rent": "Rent",
+    "location": "Location",
+    "locationPlaceholder": "Community or building",
+    "type": "Type",
+    "beds": "Beds",
+    "maxPrice": "Max price",
+    "any": "Any",
+    "studio": "Studio",
+    "submit": "Search",
+    "types": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "townhouse": "Townhouse",
+      "penthouse": "Penthouse",
+      "office": "Office",
+      "retail": "Retail",
+      "plot": "Plot"
+    }
+  },
+  "services": {
+    "title": "How We Serve Our Clients",
+    "approachTitle": "Our Approach",
+    "approachBody": "Listen first. Understand the objective. Present the right options. Negotiate carefully. Stay involved until completion.",
+    "items": [
+      { "title": "Residential & Luxury Property", "body": "Advisory for homes, apartments, villas and selected lifestyle assets, whether for end use or investment." },
+      { "title": "Commercial Real Estate", "body": "Support for offices, retail, commercial units, buildings and income-generating property opportunities." },
+      { "title": "Plots & Development Opportunities", "body": "Guidance on residential and commercial plots, development land and investor-focused opportunities." },
+      { "title": "Buying, Selling & Investment Advisory", "body": "Market-led support through acquisitions, disposals, negotiations, pricing and investment decision-making." },
+      { "title": "Off-Plan & Secondary Market", "body": "Access to selected developer launches as well as ready and resale opportunities across the UAE." },
+      { "title": "Property Management & Leasing Support", "body": "Assistance for owners who want their properties positioned, leased and managed with professional follow-through." },
+      { "title": "Golden Visa Property Guidance", "body": "Support for eligible property investors navigating the real-estate related Golden Visa process with the relevant specialists." }
+    ]
+  },
+  "listings": {
+    "eyebrow": "Selected properties",
+    "featured": "Featured listings",
+    "viewAll": "View all properties",
+    "allTitle": "Properties",
+    "results": "{count} properties",
+    "resultOne": "1 property",
+    "none": "No properties match these filters yet. Try widening your search or contact us for off-market options.",
+    "forSale": "For sale",
+    "forRent": "For rent",
+    "offPlan": "Off-plan",
+    "perYear": "/ yr",
+    "from": "From",
+    "beds": "{n} beds",
+    "bed": "1 bed",
+    "studio": "Studio",
+    "baths": "{n} baths",
+    "sqft": "{n} sq ft",
+    "permit": "DLD permit {n}",
+    "photoSoon": "Photos coming soon",
+    "loading": "Loading properties…"
+  },
+  "property": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "size": "Size",
+    "type": "Type",
+    "about": "About this property",
+    "location": "Location",
+    "permitTitle": "DLD permit verified",
+    "permitNo": "Trakheesi permit {n}",
+    "ref": "Listing ref {n}",
+    "permitHelp": "Scan the QR code on the ad to check it with the Dubai Land Department.",
+    "agentLangs": "Speaks {langs}",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "enquire": "Enquire about this property",
+    "mortgage": "Mortgage estimate",
+    "downPayment": "Down payment (%)",
+    "term": "Term (years)",
+    "rate": "Interest rate (%)",
+    "monthly": "Estimated monthly payment",
+    "mortgageNote": "Indicative only. Rates and eligibility depend on the bank."
+  },
+  "founder": {
+    "title": "A Personal Message",
+    "body": "To my friends, clients and business network, it is my pleasure to introduce GTG Real Estate. Whether you are looking to invest, buy, sell, lease or manage property in the UAE, my team and I are ready to assist you personally and professionally.",
+    "name": "Nabeel Al Naghi",
+    "role": "Founder",
+    "company": "GTG Real Estate LLC",
+    "photoAlt": "Nabeel Al Naghi at his desk"
+  },
+  "contact": {
+    "title": "Let’s discuss your property goals.",
+    "body": "For private consultations, investment discussions and property support across the UAE.",
+    "phoneLabel": "Phone",
+    "formLabel": "Contact GTG",
+    "name": "Full name",
+    "phone": "Phone / WhatsApp",
+    "email": "Email",
+    "interest": "I’m interested in",
+    "message": "Message (optional)",
+    "interests": {
+      "buy": "Buying",
+      "sell": "Selling",
+      "rent": "Renting / leasing",
+      "invest": "Investment advisory",
+      "golden_visa": "Golden Visa guidance",
+      "management": "Property management"
+    },
+    "consent": "I agree that GTG Real Estate may contact me and store my details as set out in the privacy policy.",
+    "submit": "Request consultation",
+    "sending": "Sending…",
+    "success": "Thank you. A GTG advisor will contact you shortly.",
+    "errorRequired": "Please add your name, a phone number and your consent.",
+    "errorGeneric": "Something went wrong. Please call or WhatsApp us instead."
+  },
+  "tagline": "Your Vision. Our Mission.",
+  "footer": {
+    "line": "GTG REAL ESTATE LLC | Private Real Estate Advisory Across the UAE",
+    "licence": "RERA ORN [number] · Trade licence [number]"
+  },
+  "whatsappLabel": "Chat with GTG on WhatsApp"
+}

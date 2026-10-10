@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* GTG Real Estate brand tokens, taken from the GTG brochure. */
+@theme {
+  --color-ink: #120e10;
+  --color-ink-deep: #0c0a0b;
+  --color-panel: #1b1919;
+  --color-panel-2: #2a2422;
+  --color-line: #3a322b;
+  --color-line-soft: #2a2422;
+  --color-gold: #c9a46a;
+  --color-gold-light: #e2c58e;
+  --color-gold-deep: #8a6a2e;
+  --color-gold-ink: #6e5424;
+  --color-cream: #efede6;
+  --color-cream-2: #e2ded3;
+  --color-sand: #f3efe7;
+  --color-sand-2: #e9e2d6;
+  --color-muted: #b7afa4;
+  --color-muted-2: #a89e90;
+  --color-body-dark: #4a4440;
+
+  --font-display: "Playfair Display Variable", "Noto Kufi Arabic Variable", Georgia, serif;
+  --font-caps: "Cinzel Variable", "Playfair Display Variable", "Noto Kufi Arabic Variable", Georgia, serif;
+  --font-sans: "Montserrat Variable", "Noto Sans Arabic Variable", system-ui, sans-serif;
+  --font-script: "Great Vibes", "Playfair Display Variable", cursive;
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-sand);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Arabic reads better without the wide Latin caps tracking. */
+[dir="rtl"] .tracking-caps {
+  letter-spacing: 0;
+}
+
+.tracking-caps {
+  letter-spacing: 0.14em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
